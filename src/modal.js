@@ -9,7 +9,7 @@ export default class Modal {
     }
     
     openModal() {
-        let selector = (typeof this.selector === 'object') ? this.selector : document.querySelectorAll(this.selector);
+        let selector = (typeof this.selector !== 'string') ? this.selector : document.querySelectorAll(this.selector);
         
         selector.forEach(modalButton => {
             modalButton.addEventListener('click', ev => {
