@@ -38,7 +38,8 @@
     
     <script src="./dist/bs4.js"></script>
     <script>
-        new bs4('.test').modal();
+        let selector = document.querySelectorAll('.test');
+        new bs4(selector).modal();
     </script>
 </body>
 </html>
