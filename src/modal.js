@@ -1,18 +1,18 @@
 export default class Modal {
 
-    constructor(selector) {
+    constructor(selector, context = null) {
         this.messages = {
             dataTarget: 'Você precisa setar um [data-target] com o seletor da modal.'
         }
         this.selector = selector;
+        this.context = context;
         this.openModal();
     }
     
     openModal() {
-        let selector = (typeof this.selector !== 'string') ? this.selector : document.querySelectorAll(this.selector);
-        console.log("typeof: ", typeof this.selector);
-        console.log("selecionados: ", selector);
-        selector.forEach(modalButton => {
+        let context = (this.context == null) ? document : this.context;
+        console.log(context);
+        context.querySelectorAll(this.selector).forEach(modalButton => {
             modalButton.addEventListener('click', ev => {
                 let target = ev.target.dataset['target'];
                 if (target) {
