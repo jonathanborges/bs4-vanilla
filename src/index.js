@@ -1,7 +1,13 @@
+import Modal from './modal';
+
 export default class bs4 {
 
-    constructor() {
-        document.write('<h1>Hello World!</h1>');
+    constructor(selector) {
+        this.selector = selector;
+    }
+
+    modal() {
+        return new Modal(this.selector);
     }
     
 }

@@ -1,8 +1,8 @@
 {
-  "name": "webpack-start-umd",
+  "name": "bs4-vanilla",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "description": "Bootstrap v4 with pure JavaScript",
+  "main": "./dist/bs4.js",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
