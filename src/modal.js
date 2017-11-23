@@ -56,7 +56,6 @@ export default class Modal {
 
         let backdrop = document.querySelector('.modal-backdrop');
         if (backdrop) {
-            console.log(backdrop.parentNode);
             backdrop.classList.remove('show');
             setTimeout(() => {
                 if (backdrop.parentNode) {
