@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: __dirname + '/dist',
         filename: 'bs4.js',
-        library: 'bs4-vanilla',
+        library: 'bs4',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
