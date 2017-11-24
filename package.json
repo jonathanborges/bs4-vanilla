@@ -1,6 +1,6 @@
 {
   "name": "bs4-vanilla",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Bootstrap v4 with pure JavaScript",
   "main": "./dist/bs4.js",
   "dependencies": {},
