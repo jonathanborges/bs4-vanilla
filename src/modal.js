@@ -54,7 +54,7 @@ export default class Modal {
         setTimeout(() => {
             modal.style.display = 'none';
         }, 500);
-        // modal.setAttribute('aria-hidden', true);
+        modal.setAttribute('aria-hidden', true);
         
         // let backdrop = document.querySelector('.modal-backdrop');
         // if (backdrop) {
