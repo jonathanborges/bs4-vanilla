@@ -56,15 +56,15 @@ export default class Modal {
         }, 500);
         modal.setAttribute('aria-hidden', true);
         
-        // let backdrop = document.querySelector('.modal-backdrop');
-        // if (backdrop) {
-        //     backdrop.classList.remove('show');
-        //     setTimeout(() => {
-        //         if (backdrop.parentNode) {
-        //             backdrop.parentNode.removeChild(backdrop);
-        //         }
-        //     }, 500);
-        // }
+        let backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.classList.remove('show');
+            setTimeout(() => {
+                if (backdrop.parentNode) {
+                    backdrop.parentNode.removeChild(backdrop);
+                }
+            }, 500);
+        }
         // document.body.classList.remove('modal-open');
     }
 }
