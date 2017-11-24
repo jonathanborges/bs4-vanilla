@@ -10,19 +10,18 @@ export default class Modal {
     }
     
     openModal() {
+        console.log('modal opened!');
         let context = (this.context == null) ? document : this.context;
         context.querySelectorAll(this.selector).forEach(modalButton => {
             modalButton.addEventListener('click', ev => {
-                let target = ev.target.closest('button').dataset['target'];
-                console.info(ev.target);
-                console.info(target);
+                let target = ev.target.dataset['target'];
                 if (target) {
                     
                     document.body.classList.add('modal-open');
 
                     let modal = document.querySelector(target);
-                    modal.removeAttribute('aria-hidden');
                     modal.style.display = 'block';
+                    modal.removeAttribute('aria-hidden');
                     modal.scrollTop = 0;
                     modal.classList.add('show');
 
@@ -32,7 +31,7 @@ export default class Modal {
                     backdrop.scrollTop = 0;
                     backdrop.classList.add('show');
 
-                    modal.focus();
+                    // modal.focus();
                     this.closeModal(modal);
                     
                 } else {
@@ -56,8 +55,7 @@ export default class Modal {
             modal.style.display = 'none';
         }, 500);
         modal.setAttribute('aria-hidden', true);
-        document.body.classList.remove('modal-open');
-
+        
         let backdrop = document.querySelector('.modal-backdrop');
         if (backdrop) {
             backdrop.classList.remove('show');
@@ -67,5 +65,6 @@ export default class Modal {
                 }
             }, 500);
         }
+        document.body.classList.remove('modal-open');
     }
 }
