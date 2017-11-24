@@ -13,8 +13,7 @@
   },
   "scripts": {
     "dev": "webpack --progress --colors --watch",
-    "commit": "git add . && git commit -m 'changes' && git push origin master",
-    "version": "webpack -p"
+    "commit": "git add . && git commit -m 'changes' && git push origin master"
   },
   "author": "",
   "license": "ISC"
