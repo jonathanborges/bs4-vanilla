@@ -51,20 +51,20 @@ export default class Modal {
     
     hideModal(modal) {
         modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 500);
-        modal.setAttribute('aria-hidden', true);
+        // setTimeout(() => {
+        //     modal.style.display = 'none';
+        // }, 500);
+        // modal.setAttribute('aria-hidden', true);
         
-        let backdrop = document.querySelector('.modal-backdrop');
-        if (backdrop) {
-            backdrop.classList.remove('show');
-            setTimeout(() => {
-                if (backdrop.parentNode) {
-                    backdrop.parentNode.removeChild(backdrop);
-                }
-            }, 500);
-        }
-        document.body.classList.remove('modal-open');
+        // let backdrop = document.querySelector('.modal-backdrop');
+        // if (backdrop) {
+        //     backdrop.classList.remove('show');
+        //     setTimeout(() => {
+        //         if (backdrop.parentNode) {
+        //             backdrop.parentNode.removeChild(backdrop);
+        //         }
+        //     }, 500);
+        // }
+        // document.body.classList.remove('modal-open');
     }
 }
