@@ -53,7 +53,7 @@ export default class Modal {
         modal.classList.remove('show');
         setTimeout(() => {
             modal.style.display = 'none';
-        }, 500);
+        }, 400);
         modal.setAttribute('aria-hidden', true);
         
         let backdrop = document.querySelector('.modal-backdrop');
@@ -63,8 +63,8 @@ export default class Modal {
                 if (backdrop.parentNode) {
                     backdrop.parentNode.removeChild(backdrop);
                 }
-            }, 500);
+                document.body.classList.remove('modal-open');
+            }, 400);
         }
-        // document.body.classList.remove('modal-open');
     }
 }
