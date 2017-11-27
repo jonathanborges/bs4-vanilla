@@ -47,7 +47,7 @@ export default class Modal {
         let context = (this.context == null) ? document : this.context;
         context.querySelectorAll(this.selector).forEach(modalButton => {
             modalButton.addEventListener('click', ev => {
-                let target = ev.target.dataset['target'];
+                let target = ev.target.closest('[data-toggle="modal"]').dataset['target'];
                 if (target) {
                     
                     document.body.classList.add('modal-open');
