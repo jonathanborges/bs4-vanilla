@@ -6,11 +6,44 @@ export default class Modal {
         }
         this.selector = selector;
         this.context = context;
-        this.openModal();
+        this.innerHeight = window.innerHeight;
+        this.startModal();
+
+        let modals = document.querySelectorAll('.modal.scrollable');
+        if (modals.length > 0) {
+            modals.forEach(modal => {
+                modal.querySelector('.modal-body').style.overflow = 'auto';
+                this.responsiveModal(modal);
+            })
+        }
+        this.onResizeWindow();
     }
     
-    openModal() {
-        console.log('modal opened!');
+    onResizeWindow() {
+        window.addEventListener('resize', ev => {
+            this.innerHeight = ev.target.innerHeight;
+            
+            this.getModals(modals => {
+                modals.forEach(modal => {
+                    this.responsiveModal(modal);
+                })
+            })
+        })
+    }
+
+    getModals(callback) {
+        let modals = document.querySelectorAll('.modal.scrollable');
+        if (modals.length > 0) {
+            return callback(modals);
+        }
+    }
+
+    responsiveModal(modal) {
+        let modalBody = modal.querySelector('.modal-body');
+        modalBody.style.maxHeight = (this.innerHeight - 200) + 'px';
+    }
+    
+    startModal() {
         let context = (this.context == null) ? document : this.context;
         context.querySelectorAll(this.selector).forEach(modalButton => {
             modalButton.addEventListener('click', ev => {
