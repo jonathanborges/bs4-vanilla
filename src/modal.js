@@ -68,7 +68,7 @@ export default class Modal {
                     this.closeModal(modal);
                     
                 } else {
-                    console.info(this.messages['dataTarget']);
+                    console.info(this.messages['dataTarget'], ev);
                 }
             })
         })
