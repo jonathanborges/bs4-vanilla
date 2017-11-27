@@ -1,4 +1,5 @@
 import Modal from './modal';
+require("./styles.css");
 
 export default class bs4 {
 

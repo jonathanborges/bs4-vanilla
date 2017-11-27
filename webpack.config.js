@@ -15,6 +15,10 @@ module.exports = {
 
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
 
             {
                 test: /(\.js)$/,
@@ -30,7 +34,7 @@ module.exports = {
             path.resolve('./node_modules'),
             path.resolve('./src')
         ],
-        extensions: ['.js', '.json']
+        extensions: ['.js', '.css']
     }
     
 }
