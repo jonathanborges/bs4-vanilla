@@ -4,16 +4,25 @@ export default class Modal {
         this.messages = {
             dataTarget: 'Você precisa setar um [data-target] com o seletor da modal.'
         }
+
+
+        
         this.selector = selector;
         this.context = context;
         this.innerHeight = window.innerHeight;
         this.startModal();
 
-        let modals = document.querySelectorAll('.modal.scrollable');
+        let modals = document.querySelectorAll('.modal');
         if (modals.length > 0) {
             modals.forEach(modal => {
-                modal.querySelector('.modal-body').style.overflow = 'auto';
-                this.responsiveModal(modal);
+                // modal.style.boxShadow = 'inset 0 0 6px';
+                // modal.style.borderRadius = '10px';
+                // modal.style.backgroundColor = '#F5F5F5';
+                
+                if (modal.classList.contains('scrollable')) {
+                    modal.querySelector('.modal-body').style.overflow = 'auto';
+                    this.responsiveModal(modal);
+                }
             })
         }
         this.onResizeWindow();
